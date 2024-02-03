@@ -2,16 +2,18 @@
 #include <string.h>
 #include <math.h>
 
+int MAX = 1760;
+
 int main()
 {
     int k;
     float A = 0, B = 0, i, j;
-    char b[1760];
-    float z[1760];
+    char b[MAX];
+    float z[MAX];
     printf("\n\x1b[2J");
     for (;;)
     {
-        memset(b, 32, 1760);
+        memset(b, 32, MAX);
         memset(z, 0, 7040);
         for (j = 0; 6.28 > j; j += 0.003)
         {
@@ -37,7 +39,7 @@ int main()
             }
         }
         printf("\x1b[H");
-        for (k = 0; 1760 > k; k++)
+        for (k = 0; MAX > k; k++)
         {
             putchar(k % 80 ? b[k] : '\n');
         }
